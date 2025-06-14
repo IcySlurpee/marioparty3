@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ovl_42.h"
 
 INCLUDE_ASM("asm/nonmatchings/overlays/ovl_42_game_guys_roulette/2FF5F0", func_80108D20_2FF5F0_game_guys_roulette);
 
