@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ovl_43.h"
 
 INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/306F70", func_8010B830_306F70_game_guys_lucky_7);
 
