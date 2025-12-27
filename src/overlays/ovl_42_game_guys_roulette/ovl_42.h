@@ -25,6 +25,7 @@ typedef struct Unk_GameGuyRouletteStruct01 {
     /* 0x1C */ f32 unk_1C;
 } Unk_GameGuyRouletteStruct01;
 
+extern u8 D_8010A640_300F10_game_guys_roulette;
 extern u8 D_8010A646_300F16_game_guys_roulette;
 extern s16 D_8010A65C_300F2C_game_guys_roulette;
 extern s16 D_8010A678_300F48_game_guys_roulette;
@@ -38,6 +39,8 @@ extern Process* D_8010A924_3011F4_game_guys_roulette;
 extern Process* D_8010A928_3011F8_game_guys_roulette;
 extern Vec2f D_8010AA88_301358_game_guys_roulette;
 extern Unk_D8010AAD6_3013A6_Struct D_8010AAD6_3013A6_game_guys_roulette;
+extern u8 D_8010AAD7_3013A7_game_guys_roulette;
+extern u8 D_8010AAD9_3013A9_game_guys_roulette;
 extern s16 D_8010AADE_3013AE_game_guys_roulette;
 extern u16 D_8010AAE0_3013B0_game_guys_roulette;
 extern u16 D_8010AAE2_3013B2_game_guys_roulette;

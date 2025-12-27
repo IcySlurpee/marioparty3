@@ -5,6 +5,8 @@ void omSetTra(omObjData*, f32, f32, f32);
 void omSetSca(omObjData*, f32, f32, f32);
 s32 func_8000B638_C238(void);
 void func_800370D0_37CD0(s16, s16);
+s16 func_80060880_61480(s16, s16, s32);
+void func_80061100_61D00(s16, s16);
 
 void func_80105A28_301168_game_guys_lucky_7(void);
 void func_80105AC0_301200_game_guys_lucky_7(void);
@@ -285,7 +287,17 @@ INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/3010E0", func_80
 
 INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/3010E0", func_8010AA8C_3061CC_game_guys_lucky_7);
 
-INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/3010E0", func_8010AD44_306484_game_guys_lucky_7);
+// INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/3010E0", func_8010AD44_306484_game_guys_lucky_7);
+s16 func_8010AD44_306484_game_guys_lucky_7(s16 arg0, s16 arg1, s16 arg2) {
+    s16 temp_v0;
+
+    temp_v0 = func_80060880_61480(arg0, arg1, arg2);
+    func_8005B63C_5C23C(temp_v0, 2, 2);
+    func_80061100_61D00(temp_v0, 1);
+    func_8005BDFC_5C9FC(temp_v0, 0);
+    func_8005D294_5DE94(temp_v0);
+    return temp_v0;
+}
 
 INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/3010E0", func_8010ADB8_3064F8_game_guys_lucky_7);
 
