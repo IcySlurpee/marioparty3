@@ -4,7 +4,7 @@ void omSetRot(omObjData*, f32, f32, f32);
 void omSetSca(omObjData*, f32, f32, f32);
 void omSetTra(omObjData*, f32, f32, f32);
 s32 func_8000B638_C238(void);
-void func_8000BC48_C848(s32, s32);
+void func_8000BC48_C848(u16, u16);
 void func_8001C624_1D224(s16, s16, s16, s16, s32);
 void func_800557A0_563A0(void);
 void func_8005B63C_5C23C(s16, s32, s32);

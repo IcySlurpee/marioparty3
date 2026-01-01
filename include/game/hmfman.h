@@ -57,6 +57,14 @@ typedef struct {
 } HmfData_Unk84_Entry;
 
 typedef struct {
+    /* 0x00 */ char unk00[8];
+    /* 0x08 */ Vec unk08;
+    /* 0x14 */ Vec unk14;
+    /* 0x20 */ char unk20[0xC];
+    /* 0x2C */ f32 unk2C;
+} HmfData_UnkBC_Struct;
+
+typedef struct {
     /* 0x00 */ s8 unk00; // UnkLightData_unk02?
     /* 0x01 */ s8 unk01;
     /* 0x02 */ s8 unk02;
@@ -79,7 +87,9 @@ typedef struct {
     /* 0x10 */ s16 unk10;
     /* 0x12 */ s16 unk12;  // Changed from char[2] since it's used as s16
     /* 0x14 */ s16 unk14;
-    /* 0x16 */ char unk16[0xA];
+    /* 0x16 */ char unk16[0x4];
+    /* 0x1A */ s16 unk1A;
+    /* 0x1C */ char unk1C[0x4];
     /* 0x20 */ s16 unk20;
     /* 0x22 */ char unk22[0x16];
     /* 0x38 */ s32 unk38;
@@ -103,7 +113,8 @@ typedef struct {
     /* 0xAC */ f32 unkAC;
     /* 0xB0 */ char unkB0[4];
     /* 0xB4 */ s32 unkB4;
-    /* 0xB8 */ char unkB8[8];
+    /* 0xB8 */ char unkB8[4];
+    /* 0xBC */ HmfData_UnkBC_Struct* unkBC;
     /* 0xC0 */ void* unkC0; // light data only?
     /* 0xC4 */ char unkC4[4];
     /* 0xC8 */ s32 unkC8;
@@ -113,11 +124,22 @@ typedef struct {
 } HmfData;
 
 typedef struct {
+    /* 0x00 */ char unk00[0x4];
+    /* 0x04 */ f32 unk04;
+    /* 0x08 */ f32 unk08;
+    /* 0x0C */ Vec unk0C;
+    /* 0x18 */ Vec unk18;
+    /* 0x24 */ Vec unk24;
+} HmfModelData_UnkBC_Unk58_Struct;
+
+typedef struct {
     /* 0x00 */ s16 unk00;
-    /* 0x02 */ char unk02[2];
+    /* 0x02 */ s16 unk02;
     /* 0x04 */ u16 unk04;
     /* 0x08 */ char unk08[0x10];
     /* 0x18 */ void (*unk18)(s16);
+    /* 0x1C */ char unk1C[0x3C];
+    /* 0x58 */ HmfModelData_UnkBC_Unk58_Struct* unk58;
 } HmfModelData_UnkBC_Struct; // Size unknown
 
 typedef struct {

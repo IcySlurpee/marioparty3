@@ -319,4 +319,38 @@ INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/3010E0", func_80
 
 INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/3010E0", func_8010B528_306C68_game_guys_lucky_7);
 
-INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/3010E0", func_8010B6E0_306E20_game_guys_lucky_7);
+// INCLUDE_ASM("asm/nonmatchings/overlays/ovl_43_game_guys_lucky_7/3010E0", func_8010B6E0_306E20_game_guys_lucky_7);
+void func_8010B6E0_306E20_game_guys_lucky_7(s16 arg0) {
+    HmfData* temp00 = HmfModelData[arg0].hmf;
+    HmfModelData_UnkBC_Struct* temp_a0 = HmfModelData[arg0].unkBC;
+    s16 temp_t0 = temp00->unk1A;
+    s16 temp_a3 = temp_a0->unk02;
+
+    HmfModelData_UnkBC_Unk58_Struct* var_v1;
+    s16 i;
+
+    if (!temp_a3) {
+        temp_a0->unk04 &= 0xFFFB;
+        var_v1 = temp_a0->unk58;
+            for (i = 0; i < temp_t0; i++) {
+                var_v1->unk0C.x = var_v1->unk0C.y = var_v1->unk0C.z = 0.0f;
+                var_v1->unk24.x = var_v1->unk24.y = var_v1->unk24.z = 0.0f;
+                var_v1->unk08 = 0.0f;
+                var_v1->unk04 = 1.0f;
+                var_v1++;
+            }
+        temp_a0->unk02++;
+    }
+
+    var_v1 = temp_a0->unk58;
+    for (i = 0; i < temp_t0; i++) {
+        if (var_v1->unk0C.y > 0.0f) {
+            var_v1->unk0C.x += var_v1->unk18.x;
+            var_v1->unk0C.y += var_v1->unk18.y - 10.0f;
+            var_v1->unk0C.z += var_v1->unk18.z;
+        } else {
+            var_v1->unk08 = 0.0f;
+        }
+        var_v1++;
+    }
+}
