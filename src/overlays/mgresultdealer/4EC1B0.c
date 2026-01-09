@@ -4,9 +4,12 @@
 f32 _atan2d(f32, f32);
 s16 HmfAnimRead(s32, s32, s32);
 
+void func_8000BBFC_C7FC(u16, s16);
 void func_8000BC48_C848(u16, u16);
+void func_8000BE5C_CA5C(s32, f32, f32);
 void func_80013320_13F20(s16, s16);
 void func_80013390_13F90(s16, s16, s32, void (*f)(s16));
+void func_80014714_15314(s16, s16);
 void func_80017954_18554(s16, s16, s16, s16);
 s16 func_80019828_1A428(s16, s16);
 void func_8003302C_33C2C(s16, s32);
@@ -16,10 +19,14 @@ void func_8010630C_4ECB1C_mgresultdealer(s16);
 void func_80106A50_4ED260_mgresultdealer(omObjData*);
 void func_80106B94_4ED3A4_mgresultdealer(omObjData*);
 void func_80106CC8_4ED4D8_mgresultdealer(omObjData*);
+void func_80108544_4EED54_mgresultdealer(void);
 void func_80106EC0_4ED6D0_mgresultdealer(omObjData*);
 void func_80106EEC_4ED6FC_mgresultdealer(void);
 void func_8010705C_4ED86C_mgresultdealer(omObjData*);
+void func_80108194_4EE9A4_mgresultdealer(void);
 void func_801072A8_4EDAB8_mgresultdealer(s16);
+void func_801082A8_4EEAB8_mgresultdealer(Gfx**, s32, s32);
+void func_80108AEC_4EF2FC_mgresultdealer(omObjData*);
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_801059A0_4EC1B0_mgresultdealer);
 
@@ -239,7 +246,10 @@ void func_80107E3C_4EE64C_mgresultdealer(void) {
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80107E44_4EE654_mgresultdealer);
 
-INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108034_4EE844_mgresultdealer);
+// INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108034_4EE844_mgresultdealer);
+s8 func_80108034_4EE844_mgresultdealer(void) {
+    return D_80109911_4F0121_mgresultdealer;
+}
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108040_4EE850_mgresultdealer);
 
@@ -250,15 +260,82 @@ void func_80108258_4EEA68_mgresultdealer(void) {
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108260_4EEA70_mgresultdealer);
 
-INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_8010829C_4EEAAC_mgresultdealer);
+// INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_8010829C_4EEAAC_mgresultdealer);
+s8 func_8010829C_4EEAAC_mgresultdealer(void) {
+    return D_80109931_4F0141_mgresultdealer;
+}
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_801082A8_4EEAB8_mgresultdealer);
+// void func_801082A8_4EEAB8_mgresultdealer(Gfx **arg0, s32 arg1, s32 arg2) {
+//     Gfx* temp_a2;
+//     // s32 temp_a0;
+//     s32 temp_v1;
+//     s32 var_a3;
+//     u32 temp_a1;
 
-INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108544_4EED54_mgresultdealer);
+//     if (D_80109938_4F0148_mgresultdealer != 0) {
+//         temp_a2 = *arg0;
+//         gDPPipeSync(temp_a2++);
+//         gDPSetCycleType(temp_a2++, G_CYC_1CYCLE);
+//         gSPClearGeometryMode(temp_a2++, G_SHADE | G_CULL_BOTH | G_FOG | G_LIGHTING | G_TEXTURE_GEN | G_TEXTURE_GEN_LINEAR | G_LOD | G_SHADING_SMOOTH);
+//         gSPSetGeometryMode(temp_a2++, G_SHADE | G_CULL_BACK | G_SHADING_SMOOTH);
+//         gDPSetTexturePersp(temp_a2++, G_TP_NONE);
+//         gDPSetPrimColor(temp_a2++, 0, 0, 0xFF, 0xFF, 0xFF, D_8010993A_4F014A_mgresultdealer & 0xFF);
+//         // temp_a2_7 = temp_a2_6 + 8;
+//         // temp_a2_5->unk8 = 0xFA000000;
+//         // temp_a2_6->words.w1 = D_8010993A_4F014A_mgresultdealer & 0xFF;
+//         gDPSetRenderMode(temp_a2++, G_RM_XLU_SURF, G_RM_XLU_SURF2);
+//         gDPSetCombineMode(temp_a2++, G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM);
+//         gDPSetTextureLUT(temp_a2++, G_TT_NONE);
 
-INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108554_4EED64_mgresultdealer);
+//         // var_a3 = 0;
+//         // do {
+//         for (var_a3 = 0; var_a3 < 0xF0; var_a3++) {
+//             gDPSetTextureImage(temp_a2++, G_IM_FMT_I, G_IM_SIZ_8b, 160, D_8010A20C_4F0A1C_mgresultdealer);
+//             gDPSetTile(temp_a2++, G_IM_FMT_I, G_IM_SIZ_8b, 20, 0x0000, G_TX_LOADTILE, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);
+//             gDPLoadSync(temp_a2++);
+//             temp_a1 = (var_a3 * 4) & 0xFFF;
+//             temp_v1 = ((var_a3 + 9) * 4) & 0xFFF;
+//             gDPLoadTile(temp_a2++, temp_a1, 0, 0, temp_v1, 0);
+//             // temp_a2_13 = temp_a2_12 + 8;
+//             // temp_a2_11->unk8 = (s32) (temp_a1 | 0xF4000000);
+//             // temp_a2_12->words.w1 = temp_v1 | 0x0727E000;
+//             gDPPipeSync(temp_a2++);
+//             gDPSetTile(temp_a2++, G_IM_FMT_I, G_IM_SIZ_4b, 20, 0x0000, G_TX_RENDERTILE, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);
+//             gDPSetTileSize(temp_a2++, temp_a1, 0, 0, temp_v1, 0);
+//             // temp_a2_16 = temp_a2_15 + 8;
+//             // temp_a2_14->unk8 = (s32) (temp_a1 | 0xF2000000);
+//             // temp_a2_15->words.w1 = temp_v1 | 0x4FC000;
+//             gDPSetTileSize(temp_a2++, G_TX_RENDERTILE, 0, 0, qu102(320), qu102(10));
+//             // temp_a0 = var_a3 + 0xA;
+//             gTexRect(temp_a2++, 0, temp_a1, 0, G_TX_RENDERTILE);
+//             // temp_a2_18 = temp_a2_17 + 8;
+//             // temp_a2_16->unk8 = (s32) (((temp_a0 * 4) & 0xFFF) | 0xE4500000);
+//             // temp_a2_17->words.w1 = temp_a1;
+//             gDPHalf1(temp_a2++, 0x00000000);
+//             gDPHalf2(temp_a2++, 0x04000400);
+//             // var_a3 = temp_a0;
+//             // var_a2 = temp_a2_19 + 8;
+//         }
+//         // } while (var_a3 < 0xF0);
+//         *arg0 = temp_a2;
+//     }
+// }
 
-INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108560_4EED70_mgresultdealer);
+// INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108544_4EED54_mgresultdealer);
+void func_80108544_4EED54_mgresultdealer(void) {
+    D_80109938_4F0148_mgresultdealer = 1;
+}
+
+// INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108554_4EED64_mgresultdealer);
+void func_80108554_4EED64_mgresultdealer(void) {
+    D_80109938_4F0148_mgresultdealer = 0;
+}
+
+// INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108560_4EED70_mgresultdealer);
+void func_80108560_4EED70_mgresultdealer(s32 arg0) {
+    D_8010993A_4F014A_mgresultdealer = arg0 & 0xFF;
+}
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80108570_4EED80_mgresultdealer);
 
@@ -273,15 +350,24 @@ void func_801090AC_4EF8BC_mgresultdealer(void) {
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_801090B4_4EF8C4_mgresultdealer);
 
-INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_801090E8_4EF8F8_mgresultdealer);
+// INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_801090E8_4EF8F8_mgresultdealer);
+s32 func_801090E8_4EF8F8_mgresultdealer(void) {
+    return D_8010A240_4F0A50_mgresultdealer;
+}
 
-INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_801090F4_4EF904_mgresultdealer);
+// INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_801090F4_4EF904_mgresultdealer);
+s32 func_801090F4_4EF904_mgresultdealer(void) {
+    return D_8010A244_4F0A54_mgresultdealer;
+}
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80109100_4EF910_mgresultdealer);
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_801093A0_4EFBB0_mgresultdealer);
 
-INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80109478_4EFC88_mgresultdealer);
+// INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80109478_4EFC88_mgresultdealer);
+s8 func_80109478_4EFC88_mgresultdealer(void) {
+    return D_80109941_4F0151_mgresultdealer;
+}
 
 INCLUDE_ASM("asm/nonmatchings/overlays/mgresultdealer/4EC1B0", func_80109484_4EFC94_mgresultdealer);
 
